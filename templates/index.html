@@ -78,28 +78,40 @@
       });
     }
 
-    function startVoice() {
-      if (!('webkitSpeechRecognition' in window)) {
-        alert("Your browser doesn't support speech input.");
-        return;
-      }
+   function startVoice() {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-      const recognition = new webkitSpeechRecognition();
-      recognition.lang = "en-US";
-      recognition.interimResults = false;
-      recognition.maxAlternatives = 1;
+  if (!SpeechRecognition) {
+    alert("Your browser doesn't support speech recognition.");
+    return;
+  }
 
-      recognition.start();
-      recognition.onresult = (event) => {
-        const transcript = event.results[0][0].transcript;
-        document.getElementById("question").value = transcript;
-        askQuestion();
-      };
+  const recognition = new SpeechRecognition();
+  recognition.lang = "en-US";
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 1;
 
-      recognition.onerror = (event) => {
-        alert("Speech error: " + event.error);
-      };
-    }
+  console.log("🎙️ Voice recognition started");
+  recognition.start();
+
+  recognition.onresult = (event) => {
+    const transcript = event.results[0][0].transcript;
+    console.log("✅ Voice result:", transcript);
+    document.getElementById("question").value = transcript;
+    askQuestion();
+  };
+
+  recognition.onerror = (event) => {
+    console.error("❌ Speech error:", event.error);
+    alert("Speech error: " + event.error);
+  };
+
+  recognition.onend = () => {
+    console.log("🎤 Voice recognition ended");
+  };
+}
+
+    
   </script>
 </body>
 </html>
