@@ -21,5 +21,4 @@ An AI-powered health assistant chatbot that answers user health-related queries 
 - HTML, CSS
 - Render (Deployment)
 
-## ⚙ Setup Instructions
-1. Clone the repo:
+
