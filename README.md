@@ -6,7 +6,7 @@ An AI-powered health assistant chatbot that answers user health-related queries 
 [ Try it Now](https://smart-health-assistant-68gx.onrender.com/)
 
 ##  Screenshot
-![Smart Health Assistant Screenshot](screenshot.png) 
+![Smart Health Assistant Screenshot](Health.jpeg) 
 ##  Features
 - Conversational AI for health-related Q&A
 - Voice output using gTTS (Google Text-to-Speech)
