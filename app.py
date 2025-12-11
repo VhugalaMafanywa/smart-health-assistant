@@ -5,7 +5,7 @@ import os
 from datetime import datetime
 
 app = Flask(__name__)
-co = cohere.Client("5ENuBgQGIHRTjWlfQlWsajf80KevIGN7lZGLz5kX")  
+co = cohere.Client("I6t5B11k4z1frkGeFPYy85izZuONZN5uWUno18R8")  
 conversation_memory = []
 os.makedirs("audio", exist_ok=True)
 HISTORY_FILE = "conversation_log.txt"
@@ -162,3 +162,4 @@ def get_audio():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
