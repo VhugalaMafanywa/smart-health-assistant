@@ -103,7 +103,7 @@ def get_ai_response(user_input):
         )
 
     response = co.generate(
-        model="command",
+        model="command-a-reasoning-08-2025",
         prompt=prompt,
         max_tokens=300,
         temperature=0.6
