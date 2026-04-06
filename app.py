@@ -7,7 +7,7 @@ import re
 
 app = Flask(__name__)
 
-co = cohere.ClientV2("I6t5B11k4z1frkGeFPYy85izZuONZN5uWUno18R8")
+co = cohere.ClientV2("Z4vOSl46rgKlfaA1KO7t1sjRxZrf0TWbyfa2hezL")
 
 conversation_memory = []
 os.makedirs("audio", exist_ok=True)
